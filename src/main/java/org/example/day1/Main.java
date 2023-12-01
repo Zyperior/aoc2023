@@ -14,16 +14,16 @@ public class Main {
 
         int result = 0;
 
-        Map<String, Integer> strValues = Map.of(
-                "one", 1,
-                "two", 2,
-                "three", 3,
-                "four", 4,
-                "five", 5,
-                "six", 6,
-                "seven", 7,
-                "eight", 8,
-                "nine", 9
+        Map<String, String> strValues = Map.of(
+                "one", "1",
+                "two", "2",
+                "three", "3",
+                "four", "4",
+                "five", "5",
+                "six", "6",
+                "seven", "7",
+                "eight", "8",
+                "nine", "9"
         );
 
         while (sc.hasNext()) {
@@ -34,14 +34,14 @@ public class Main {
                     .toList();
 
             StringBuilder str1 = new StringBuilder();
-            Integer nr1 = null;
+            String nr1 = null;
 
             for (int i = 0; i < list.size() && nr1 == null; i++) {
 
                 Character ch = list.get(i);
 
                 if (Character.isDigit(ch)) {
-                    nr1 = Integer.parseInt(ch.toString());
+                    nr1 = ch.toString();
 
                 } else {
                     str1.append(ch);
@@ -56,14 +56,14 @@ public class Main {
             }
 
             StringBuilder str2 = new StringBuilder();
-            Integer nr2 = null;
+            String nr2 = null;
 
             for (int i = list.size() - 1; i > -1 && nr2 == null; i--) {
 
                 Character ch = list.get(i);
 
                 if (Character.isDigit(ch)) {
-                    nr2 = Integer.parseInt(ch.toString());
+                    nr2 = ch.toString();
 
                 } else {
                     str2.insert(0, ch);
@@ -77,8 +77,7 @@ public class Main {
                 }
             }
 
-            String actualNrStr = String.valueOf(nr1) + nr2;
-            result += Integer.parseInt(actualNrStr);
+            result += Integer.parseInt(nr1 + nr2);
         }
 
         System.err.println(result);
