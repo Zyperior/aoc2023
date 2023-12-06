@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+public class Part2 {
     public static void main(String[] args) {
-        InputStream inputStream = Main.class.getResourceAsStream("/input.txt");
+        InputStream inputStream = Part2.class.getResourceAsStream("/input.txt");
         if (inputStream == null) throw new RuntimeException("Invalid file path");
         Scanner sc = new Scanner(inputStream);
 
